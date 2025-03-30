@@ -3,8 +3,8 @@
   align-items: center;
   flex-direction: column;
   gap: 35px;
-  /* padding: 50px 0; */
 }
+
 .hero img {
   margin-top: 50px;
 }
@@ -30,42 +30,46 @@
   line-height: 40px;
 }
 
-
-.hero-actions{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 50px;
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
 }
 
-.hero-connect{
-    padding: 25px 45px;
-    border-radius: 50px;
-    background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
-    cursor: pointer;
+.hero-connect {
+  padding: 25px 45px;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+  cursor: pointer;
+  text-decoration: none; /* Remove default underline from AnchorLink */
+  color: white; /* Ensure text is visible on gradient background */
+  display: inline-block; /* Ensure it behaves like a button */
 }
 
-.hero-connect:hover{
-    border: 2px solid  #fff; 
-    background: linear-gradient(270deg, #b415ff 10%, #df8908 100%);
+.hero-connect:hover {
+  border: 2px solid #fff;
+  background: linear-gradient(270deg, #b415ff 10%, #df8908 100%);
 }
 
-.hero-resume{
-    padding: 25px 75px;
-    border-radius: 50px;
-    border: 2px solid #fff;
-    cursor: pointer;
+.hero-resume {
+  padding: 25px 75px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  text-decoration: none; /* Remove default underline from anchor */
+  color: #fff; /* Ensure text is visible */
+  display: inline-block; /* Ensure it behaves like a button */
 }
 
-.hero-resume:hover{
-    border-color: #b415ff;
+.hero-resume:hover {
+  border-color: #b415ff;
 }
 
 @media (max-width: 768px) {
-
-  .hero img{
+  .hero img {
     margin-top: 120px;
     width: 260px;
   }
@@ -82,20 +86,19 @@
     margin: 10px 0px;
   }
 
-  .hero-actions{
+  .hero-actions {
     gap: 16px;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 50px;
   }
 
-  .hero-connect{
+  .hero-connect {
     padding: 20px 30px;
-   border-radius: 40px;
+    border-radius: 40px;
   }
-  .hero-resume{
+  .hero-resume {
     padding: 20px 50px;
     border-radius: 40px;
   }
- 
 }

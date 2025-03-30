@@ -198,5 +198,19 @@
     font-size: 18px;
   }
 
+  .contact-right lable{
+    font-size: 20px;
+  }
+
+  .contact-right input{
+    width: 90%;
+    font-size: 20px;
+  }
+
+  .contact-right textarea{
+    width: 90%;
+    font-size: 20px;
+  }
+
  
 }
