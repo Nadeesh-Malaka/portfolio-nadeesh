@@ -69,7 +69,7 @@ const Contact = () => {
           {result.message && (
             <p className={`result-message ${result.type}`}>{result.message}</p>
           )}
-
+          <br />
           <label htmlFor="name">Your Name</label>
           <input type="text" name="name" placeholder="Enter your name" required />
           <label htmlFor="email">Your Email</label>
