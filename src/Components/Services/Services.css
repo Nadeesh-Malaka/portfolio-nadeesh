@@ -1,0 +1,112 @@
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+}
+
+.services-title {
+    position: relative;
+}
+
+.services-title h1 {
+    padding: 0px 30px;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.services-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 120px;
+    margin-bottom: 80px;
+}
+
+/* Flip Card Effect */
+.services-card {
+    perspective: 1000px;
+    width: 300px;
+    height: 280px;
+    cursor: pointer;
+}
+
+.services-card .card-front,
+.services-card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 40px;
+    border: 2px solid white;
+    transition: transform 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Front Card */
+.card-front {
+    background: linear-gradient(45deg, #3f0028, #582300);
+}
+
+/* Back Card */
+.card-back {
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Flip animation */
+.services-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.services-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+.services-card h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.services-card h2 {
+    font-size: 38px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #FF0080 0%, #FF8C00 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.services-card p {
+    color: #d4d4d4;
+    font-size: 22px;
+    line-height: 32px;
+    max-width: 300px;
+}
+
+.services-readmore {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.services-card:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
+}
