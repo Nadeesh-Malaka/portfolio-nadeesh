@@ -118,3 +118,33 @@
   transform: scale(1.05);
   transition: 0.3s;
 }
+
+/* my add */
+/* Message styling */
+.result-message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 400px;
+}
+
+/* Success message (green) */
+.result-message.success {
+  color: #ffffff;
+  background-color: #28a745; /* Green background */
+}
+
+/* Error message (red) */
+.result-message.error {
+  color: #ffffff;
+  background-color: #dc3545; /* Red background */
+}
+
+/* Pending message (yellow) */
+.result-message.pending {
+  color: #ffffff;
+  background-color: #ffc107; /* Yellow background */
+}
