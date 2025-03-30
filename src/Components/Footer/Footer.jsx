@@ -12,8 +12,7 @@ const Footer = () => {
           <img src={footer_logo} alt="Nadeesh Malaka" />
           <p>
             {" "}
-            I'm a passionate Software Developer specializing in web development,
-            the MERN stack, and UI/UX design. I love building innovative digital
+            I'm a passionate Software Developer specializing in web development. I love building innovative digital
             solutions!
           </p>
         </div>
@@ -21,7 +20,7 @@ const Footer = () => {
           <h3>Follow Me</h3>
           <div className="social-icons">
             <a
-              href="https://github.com/yourgithub"
+              href="https://github.com/Nadeesh-Malaka"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -35,7 +34,7 @@ const Footer = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://www.youtube.com/channel/youryoutube"
+              href="https://www.youtube.com/@NadeeshCreation"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -67,3 +67,20 @@
 .footer-bottom-right a:hover {
     text-decoration: underline;
 }
+
+@media(max-width:768px){
+    .footer{
+        margin: 50px 70px;
+    }
+
+    .footer-top{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-bottom{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+}
