@@ -1,40 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
-import profile_img from "../../assets/profile_img.svg";
+import profile_img from "../../assets/profile2.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import cv_file from "../../assets/Nadeesh_Malaka_CV.pdf"; // Fixed the file path (removed space)
+import cv_file from "../../assets/Nadeesh_Malaka_CV.pdf";
 
 const Hero = () => {
-  // List of roles to cycle through
   const roles = [
     "Backend Developer",
     "Front-End Developer",
-    "Content Creator", 
+    "Content Creator",
     "Full Stack Developer",
   ];
 
-  // State to track the current role
   const [currentRole, setCurrentRole] = useState(roles[0]);
 
-  // UseEffect to cycle through roles every 1 second
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prevRole) => {
         const currentIndex = roles.indexOf(prevRole);
-        const nextIndex = (currentIndex + 1) % roles.length; // Loop back to the first role
+        const nextIndex = (currentIndex + 1) % roles.length;
         return roles[nextIndex];
       });
-    }, 1500); // Change every 1 second
+    }, 1500);
 
-    // Cleanup the interval on component unmount
     return () => clearInterval(interval);
   }, [roles]);
 
   return (
     <div id="home" className="hero">
-      <img src={profile_img} alt="Nadeesh Malaka" />
+      <img
+        src={profile_img}
+        alt="Nadeesh Malaka Profile"
+        className="profile-img"
+      />
       <h1>
-        <span>Hi, I'm Nadeesh Malaka,</span> <br />  {currentRole} 
+        <span>Hi, I'm Nadeesh Malaka,</span> <br /> {currentRole}
       </h1>
       <p>
         I specialize in building robust backend systems, crafting seamless user
