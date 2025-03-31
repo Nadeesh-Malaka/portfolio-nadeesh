@@ -1,11 +1,11 @@
 import project1_img from "../assets/skillswap_platform.png";
-import project2_img from "../assets/project_2.svg";
-import project3_img from "../assets/project_3.svg";
-import project4_img from "../assets/project_4.svg";
-import project5_img from "../assets/project_5.svg";
-import project6_img from "../assets/project_6.svg";
-import project7_img from "../assets/project_5.svg";
-import project8_img from "../assets/project_2.svg";
+import project2_img from "../assets/knowledge_sharing_platform.png";
+import project3_img from "../assets/calmaster_app.png";
+import project4_img from "../assets/master_education_platform.png";
+import project5_img from "../assets/library_management_system.png";
+import project6_img from "../assets/portfolio_website.png";
+import project7_img from "../assets/quiz_game.png";
+import project8_img from "../assets/blog_api.png";
 
 const mywork_data = [
   {
@@ -55,7 +55,7 @@ const mywork_data = [
     w_name: "Quiz Game",
     w_desc: "An interactive quiz game to explore, challenge, and learn new knowledge.",
     w_img: project7_img,
-    w_link: "https://github.com/Nadeesh-Malaka/Quiz-Game-programming-c",
+    w_link: "https://github.com/Nadeesh-Malaka/Quiz-Game-programming-c-",
   },
   {
     w_no: 8,
