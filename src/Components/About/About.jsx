@@ -1,12 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./About.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
-import profile_img from "../../assets/profile_img.svg";
+import profile_img from "../../assets/profile2.png";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("about-skills");
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef(null);
 
-  // Education data
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisible(entry.isIntersecting); // Set isVisible based on whether the section is in view
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+      }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
   const education = {
     university: {
       name: "UVA Wellassa University",
@@ -19,13 +42,11 @@ const About = () => {
       level: "G.C.E. Advanced Level (2020)",
       results: [
         "ICT: B   |    ET: C  | SFT: C | General English: C",
-
         "Z-Score: 1.5294",
       ],
     },
   };
 
-  // Certificates data
   const certificates = [
     "↪ Web Design for Beginners – University of Moratuwa (2024)",
     "↪ Programming in Python – University of Moratuwa (2024)",
@@ -36,23 +57,22 @@ const About = () => {
     "↪ Participant, UvaXtreme 1.1 Hackathon – IEEE Club, Uva Wellassa University (2025)",
   ];
 
-  // Working experience data
   const experience = [
     "▶ Antler Industries Pvt Ltd | Sales Associate | Dec 2021 – Jul 2022",
     "▶ Global System Solutions International (Pvt) Ltd | Data Entry Assistant | Aug 2021 – Nov 2021",
   ];
 
   return (
-    <div id="about" className="about">
+    <div id="about" className="about" ref={aboutRef}>
       <div className="about-title">
         <h1>About Me</h1>
         <img src={theme_pattern} alt="Pattern" />
       </div>
       <div className="about-sections">
-        <div className="about-left">
-          <img src={profile_img} alt="Profile" />
+        <div className={`about-left ${isVisible ? "fade-in" : ""}`}>
+          <img src={profile_img} alt="Nadeesh Malaka Profile" className="profile-img" />
         </div>
-        <div className="about-right">
+        <div className={`about-right ${isVisible ? "fade-in" : ""}`}>
           <div className="about-tabs">
             <button
               className={activeTab === "about-skills" ? "active" : ""}
@@ -94,7 +114,6 @@ const About = () => {
                   control (Git), I have hands-on experience in building robust,
                   maintainable, and well-tested software solutions.
                 </p>
-
                 <p>
                   Beyond coding, I engage in event coordination, leadership, and
                   tech content creation on YouTube. I’m seeking a software
@@ -138,12 +157,10 @@ const About = () => {
                     <br />
                     {education.university.gpa}
                   </div>
-
                   <div className="education-item">
                     <strong>{education.school.name}</strong>
                     <br />
                     {education.school.level}
-
                     <p>
                       <strong>Results:</strong>
                       <br />
