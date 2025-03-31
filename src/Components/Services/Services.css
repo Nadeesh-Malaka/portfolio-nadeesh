@@ -9,7 +9,15 @@
 
 .services-title {
     position: relative;
-}
+    opacity: 0; /* Initial state: hidden */
+    transform: translateY(20px); /* Initial state: slightly below */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  }
+
+  .services-title.fade-in {
+    opacity: 1; /* Fade in when in view */
+    transform: translateY(0); /* Move to original position */
+  }
 
 .services-title h1 {
     padding: 0px 30px;
@@ -29,7 +37,16 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 120px;
     margin-bottom: 80px;
-}
+    opacity: 0; /* Initial state: hidden */
+    transform: translateY(20px); /* Initial state: slightly below */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+    transition-delay: 0.2s; /* Slight delay for staggered effect */
+  }
+
+  .services-container.fade-in {
+    opacity: 1; /* Fade in when in view */
+    transform: translateY(0); /* Move to original position */
+  }
 
 /* Flip Card Effect */
 .services-card {
