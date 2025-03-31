@@ -11,8 +11,16 @@
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff; /* White border already matches the screenshot */
+  border: 4px solid #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Initial state: hidden */
+  transform: translateY(20px); /* Initial state: slightly below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+}
+
+.hero .profile-img.fade-in {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
 }
 
 .hero h1 {
@@ -21,6 +29,15 @@
   font-weight: 600;
   width: 80%;
   line-height: 1.2;
+  opacity: 0; /* Initial state: hidden */
+  transform: translateY(20px); /* Initial state: slightly below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+.hero h1.fade-in {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
 }
 
 .hero h1 span {
@@ -44,6 +61,15 @@
   text-align: center;
   font-size: 24px;
   line-height: 40px;
+  opacity: 0; /* Initial state: hidden */
+  transform: translateY(20px); /* Initial state: slightly below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  transition-delay: 0.4s; /* Slight delay for staggered effect */
+}
+
+.hero p.fade-in {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
 }
 
 .hero-actions {
@@ -53,6 +79,15 @@
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 50px;
+  opacity: 0; /* Initial state: hidden */
+  transform: translateY(20px); /* Initial state: slightly below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  transition-delay: 0.6s; /* Slight delay for staggered effect */
+}
+
+.hero-actions.fade-in {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
 }
 
 .hero-connect {
@@ -120,6 +155,9 @@
     padding: 20px 50px;
     border-radius: 40px;
   }
+
+  /* Ensure animation still works on mobile */
+ 
 }
 
 @media (max-width: 480px) {
