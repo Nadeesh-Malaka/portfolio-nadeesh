@@ -184,7 +184,7 @@
   .about {
     margin: 50px 70px;
     gap: 60px;
-    align-items: start;
+    align-items: start; /* Keep alignment as start for content */
   }
 
   .about-title h1 {
@@ -199,15 +199,16 @@
 
   .about-sections {
     flex-direction: column;
+    align-items: flex-start; /* Align content to the start */
   }
 
   .about-left {
-    display: none; /* Image is hidden on mobile */
+    display: none; /* Hide the image on mobile */
   }
 
+  /* Ensure animation still works for the content on mobile */
   .about-right {
-    opacity: 1; /* Ensure content is visible on mobile without animation */
-    transform: translateY(0);
+    /* Let the default animation properties apply */
   }
 
   .about-tabs {
