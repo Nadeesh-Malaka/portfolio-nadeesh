@@ -130,6 +130,15 @@
     transition: 0.3s;
   }
   
+  .about-para {
+    text-align: justify;
+  }
+
+  .about-left {
+    margin-top: 50px;
+  }
+
+  
   @media (max-width: 768px) {
     .about {
       margin: 50px 70px;
@@ -197,4 +206,5 @@
     .about-skill hr {
       width: 60%;
     }
+
   }

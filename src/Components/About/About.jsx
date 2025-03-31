@@ -18,10 +18,8 @@ const About = () => {
       name: "Piliyandala Central College",
       level: "G.C.E. Advanced Level (2020)",
       results: [
-        "ICT: B",
-        "Engineering Technology: C",
-        "Science for Technology: C",
-        "General English: C",
+        "ICT: B   |    ET: C  | SFT: C | General English: C",
+
         "Z-Score: 1.5294",
       ],
     },
@@ -85,35 +83,44 @@ const About = () => {
             {activeTab === "about-skills" && (
               <div className="about-para">
                 <p>
-                  I’m Nadeesh Malaka, a passionate Full Stack Developer from Sri
-                  Lanka. I love building web applications and solving real-world
-                  problems with technology.
+                  I’m Nadeesh Malaka, an undergraduate pursuing a Bachelor of
+                  Information and Communication Technology (Hons), specializing
+                  in Software Technology.
                 </p>
                 <p>
-                  With experience in modern web development, I specialize in
-                  creating interactive and scalable applications using MERN
-                  stack, Laravel, and cloud technologies.
+                  I specialize in backend and full-stack development, with
+                  expertise in React, Laravel, Java, and the MERN stack. Skilled
+                  in software engineering, database management, and version
+                  control (Git), I have hands-on experience in building robust,
+                  maintainable, and well-tested software solutions.
+                </p>
+
+                <p>
+                  Beyond coding, I engage in event coordination, leadership, and
+                  tech content creation on YouTube. I’m seeking a software
+                  engineering internship to apply my skills and grow as a
+                  developer.
                 </p>
                 <div className="about-skills">
                   <div className="about-skill">
                     <p>HTML, CSS & JS</p>
-                    <hr style={{ width: "60%" }} />
+                    <hr style={{ width: "52%" }} />
                   </div>
                   <div className="about-skill">
                     <p>React & Vue.js</p>
-                    <hr style={{ width: "65%" }} />
+                    <hr style={{ width: "50%" }} />
                   </div>
                   <div className="about-skill">
                     <p>Node.js & Express</p>
-                    <hr style={{ width: "60%" }} />
+                    <hr style={{ width: "51%" }} />
                   </div>
                   <div className="about-skill">
                     <p>MongoDB & MySQL</p>
-                    <hr style={{ width: "65%" }} />
+                    <hr style={{ width: "57%" }} />
                   </div>
                   <div className="about-skill">
                     <p>Laravel & PHP</p>
-                    <hr style={{ width: "80%" }} />
+                    <hr style={{ width: "60%" }} />
                   </div>
                 </div>
               </div>
@@ -131,13 +138,16 @@ const About = () => {
                     <br />
                     {education.university.gpa}
                   </div>
-                   
+
                   <div className="education-item">
                     <strong>{education.school.name}</strong>
                     <br />
                     {education.school.level}
-                    <br /><br />
-                    <p><strong>Results:</strong><br /></p>
+
+                    <p>
+                      <strong>Results:</strong>
+                      <br />
+                    </p>
                     {education.school.results.map((result, index) => (
                       <span key={index}>
                         {result}
