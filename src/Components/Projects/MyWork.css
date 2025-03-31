@@ -1,160 +1,183 @@
 .mywork {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  margin: 80px 170px;
+}
+
+.mywork-title {
+  position: relative;
+  opacity: 0; /* Initial state: hidden */
+  transform: translateY(20px); /* Initial state: slightly below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+}
+
+.mywork-title.fade-in {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
+}
+
+.mywork-title h1 {
+  padding: 0px 30px;
+  font-size: 80px;
+  font-weight: 600;
+}
+
+.mywork-title img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.mywork-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  opacity: 0; /* Initial state: hidden */
+  transform: translateY(20px); /* Initial state: slightly below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+.mywork-container.fade-in {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
+}
+
+.mywork-item {
+  position: relative;
+  width: 419px;
+  height: 280px;
+  overflow: hidden;
+}
+
+.mywork-item img {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.mywork-item:hover img {
+  opacity: 0.3;
+  transform: scale(1.05);
+  border: 4px solid #a904a9;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.mywork-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 47, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.mywork-item:hover .mywork-overlay {
+  opacity: 1;
+}
+
+.mywork-overlay p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  max-width: 80%;
+}
+
+.mywork-overlay a {
+  display: inline-block;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mywork-overlay a img {
+  width: 20px;
+  height: 20px;
+}
+
+.mywork-overlay a:hover {
+  transform: scale(1.2);
+}
+
+.mywork-showmore {
+  display: flex;
+  gap: 15px;
+  border-radius: 50px;
+  border: 2px solid white;
+  padding: 30px 60px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.mywork-showmore:hover {
+  gap: 40px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .mywork {
+    gap: 50px;
+    margin: 50px 70px;
+    align-items: start;
   }
-  
-  .mywork-title {
-    position: relative;
-  }
-  
+
   .mywork-title h1 {
-    padding: 0px 30px;
-    font-size: 80px;
+    padding: 0;
     font-weight: 600;
+    font-size: 50px;
   }
-  
+
   .mywork-title img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+    width: 130px;
+    margin-right: -20px;
   }
-  
+
   .mywork-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
-  
+
   .mywork-item {
-    position: relative;
-    width: 419px;
-    height: 280px;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
   }
-  
+
   .mywork-item img {
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    transition: 0.3s;
-    cursor: pointer;
-    object-fit: cover;
   }
-  
-  .mywork-item:hover img {
-    opacity: 0.3;
-    transform: scale(1.05);
-    border: 4px solid #a904a9;
-    border-radius: 10px;
-    transition: 0.3s;
-  }
-  
-  .mywork-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(30, 30, 47, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .mywork-item:hover .mywork-overlay {
-    opacity: 1;
-  }
-  
-  .mywork-overlay p {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    max-width: 80%;
-  }
-  
-  .mywork-overlay a {
-    display: inline-block;
-    background: #fff;
-    border-radius: 50%;
-    padding: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .mywork-overlay a img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .mywork-overlay a:hover {
-    transform: scale(1.2);
-  }
-  
+
   .mywork-showmore {
-    display: flex;
-    gap: 15px;
-    border-radius: 50px;
-    border: 2px solid white;
-    padding: 30px 60px;
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 80px;
-    transition: 0.6s;
-    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 18px;
+    margin: 50px auto;
   }
-  
-  .mywork-showmore:hover {
-    gap: 40px;
-    transition: 0.3s;
+
+  /* Ensure animation still works on mobile */
+  .mywork-title,
+  .mywork-container {
+    /* Let the default animation properties apply */
   }
-  
-  @media (max-width: 768px) {
-    .mywork {
-      gap: 50px;
-      margin: 50px 70px;
-      align-items: start;
-    }
-  
-    .mywork-title h1 {
-      padding: 0;
-      font-weight: 600;
-      font-size: 50px;
-    }
-  
-    .mywork-title img {
-      width: 130px;
-      margin-right: -20px;
-    }
-  
-    .mywork-container {
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-  
-    .mywork-item {
-      width: 100%;
-      height: 100%;
-    }
-  
-    .mywork-item img {
-      width: 100%;
-      height: 100%;
-    }
-  
-    .mywork-showmore {
-      padding: 20px 40px;
-      font-size: 18px;
-      margin: 50px auto;
-    }
-  }
+}
