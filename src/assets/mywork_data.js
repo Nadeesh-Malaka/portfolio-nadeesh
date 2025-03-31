@@ -62,7 +62,7 @@ const mywork_data = [
     w_name: "Blog API with Real-Time Updates",
     w_desc: "A Node.js blog API with user/post management and real-time updates using WebSocket.",
     w_img: project8_img,
-    w_link: "https://github.com/Nadeesh-Malaka/Blog-API-Real-Time-",
+    w_link: "https://github.com/Nadeesh-Malaka/Blog-API-Real-Time",
   },
 
 ];
