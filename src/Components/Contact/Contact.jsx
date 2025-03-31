@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState, useEffect, useRef } from "react";
 import "./Contact.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
@@ -7,6 +7,31 @@ import location_icon from "../../assets/location_icon.svg";
 
 const Contact = () => {
   const [result, setResult] = useState({ message: "", type: "" }); // Add type for styling
+  const [isVisible, setIsVisible] = useState(false); // State to track visibility
+  const contactRef = useRef(null); // Ref to the Contact section
+
+  // Intersection Observer to detect when the section is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisible(entry.isIntersecting); // Set isVisible based on whether the section is in view
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+      }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -18,7 +43,7 @@ const Contact = () => {
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       const data = await response.json();
@@ -37,13 +62,13 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="contact">
-      <div className="contact-title">
+    <div id="contact" className="contact" ref={contactRef}>
+      <div className={`contact-title ${isVisible ? "fade-in" : ""}`}>
         <h1>Get in touch</h1>
         <img src={theme_pattern} alt="Theme Pattern" />
       </div>
       <div className="contact-section">
-        <div className="contact-left">
+        <div className={`contact-left ${isVisible ? "fade-in" : ""}`}>
           <h1>Contact me</h1>
           <p>
             I'm always open to discussing new projects, creative ideas or
@@ -64,7 +89,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <form onSubmit={onSubmit} className="contact-right">
+        <form onSubmit={onSubmit} className={`contact-right ${isVisible ? "fade-in" : ""}`}>
           {/* Show result message with the correct class */}
           {result.message && (
             <p className={`result-message ${result.type}`}>{result.message}</p>
