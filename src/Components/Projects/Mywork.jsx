@@ -6,20 +6,17 @@ import arrow_icon from "../../assets/arrow_icon.svg";
 import external_link_icon from "../../assets/external_link_icon.svg";
 
 const Mywork = () => {
-  const [visibleCount, setVisibleCount] = useState(6); // Show 6 projects initially
-  const [isVisible, setIsVisible] = useState(false); // State to track visibility
-  const myworkRef = useRef(null); // Ref to the Mywork section
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [isVisible, setIsVisible] = useState(false);
+  const myworkRef = useRef(null);
 
-  // Intersection Observer to detect when the section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        setIsVisible(entry.isIntersecting); // Set isVisible based on whether the section is in view
+        setIsVisible(entry.isIntersecting);
       },
-      {
-        threshold: 0.2, // Trigger when 20% of the section is visible
-      }
+      { threshold: 0.2 }
     );
 
     if (myworkRef.current) {
@@ -34,7 +31,7 @@ const Mywork = () => {
   }, []);
 
   const handleShowMore = () => {
-    setVisibleCount(mywork_data.length); // Show all projects
+    setVisibleCount(mywork_data.length);
   };
 
   return (

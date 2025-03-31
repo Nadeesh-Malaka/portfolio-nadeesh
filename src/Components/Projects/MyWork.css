@@ -9,14 +9,14 @@
 
 .mywork-title {
   position: relative;
-  opacity: 0; /* Initial state: hidden */
-  transform: translateY(20px); /* Initial state: slightly below */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .mywork-title.fade-in {
-  opacity: 1; /* Fade in when in view */
-  transform: translateY(0); /* Move to original position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mywork-title h1 {
@@ -34,24 +34,25 @@
 
 .mywork-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  opacity: 0; /* Initial state: hidden */
-  transform: translateY(20px); /* Initial state: slightly below */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
-  transition-delay: 0.2s; /* Slight delay for staggered effect */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Smaller gap to match the screenshot */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition-delay: 0.2s;
 }
 
 .mywork-container.fade-in {
-  opacity: 1; /* Fade in when in view */
-  transform: translateY(0); /* Move to original position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mywork-item {
   position: relative;
-  width: 419px;
-  height: 280px;
+  width: 100%; /* Let the grid control the width */
+  aspect-ratio: 3 / 2; /* Maintain a consistent aspect ratio (same as 419px/280px) */
   overflow: hidden;
+  border-radius: 10px; /* Add border radius for a modern look */
 }
 
 .mywork-item img {
@@ -64,9 +65,9 @@
 }
 
 .mywork-item:hover img {
-  opacity: 0.3;
+  opacity: 0.5; /* Slightly different opacity to match the screenshot */
   transform: scale(1.05);
-  border: 4px solid #a904a9;
+  border: 2px solid #b415ff; /* Purple border on hover to match your theme */
   border-radius: 10px;
   transition: 0.3s;
 }
@@ -95,7 +96,7 @@
 }
 
 .mywork-overlay p {
-  font-size: 18px;
+  font-size: 16px; /* Smaller font size to fit the overlay */
   font-weight: 500;
   margin-bottom: 10px;
   max-width: 80%;
@@ -155,13 +156,13 @@
   }
 
   .mywork-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 15px; /* Smaller gap for mobile */
   }
 
   .mywork-item {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 3 / 2;
   }
 
   .mywork-item img {
@@ -169,11 +170,13 @@
     height: 100%;
   }
 
+  .mywork-overlay p {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+
   .mywork-showmore {
     padding: 20px 40px;
     font-size: 18px;
     margin: 50px auto;
   }
-
-
 }
