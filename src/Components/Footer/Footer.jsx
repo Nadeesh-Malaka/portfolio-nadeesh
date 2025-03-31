@@ -13,7 +13,7 @@ const Footer = () => {
           <p>
             {" "}
             I'm a passionate Software Developer specializing in web development. I love building innovative digital
-            solutions!
+            solutions.
           </p>
         </div>
         <div className="footer-top-right">
