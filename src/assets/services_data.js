@@ -14,7 +14,7 @@ const services_data = [
     {
         s_no: "03",
         s_name: "API Development",
-        s_desc: "Creating and integrating RESTful APIs for dynamic and interactive web applications.",
+        s_desc: "Creating, designing, and integrating RESTful APIs for dynamic and interactive web applications.",
         details: "I develop RESTful APIs with JWT authentication, ensuring secure and smooth data flow between server and client."
     },
 

@@ -146,7 +146,7 @@
     }
 
     .services-card{
-        gap: 20px;
+        gap: 10px;
         padding: 32px;
     }
 
@@ -161,11 +161,11 @@
     }
 
     .card-back h2{
-        font-size: 28px;
+        font-size: 25px;
 
     }
     .card-back p{
-        font-size: 18px;
+        font-size: 16px;
         line-height: 32px ;
         max-width: 300px;
     }
@@ -177,13 +177,13 @@
 
     .services-container{
         grid-template-columns: 1fr ;
-        gap: 30     px;
+        gap: 20px;
     }
 
     .services-card .card-front,
 .services-card .card-back {
-    width: 70%;
-    height: 100%;
+    width: auto;
+    height: auto;
     
 }
 
