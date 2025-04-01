@@ -12,7 +12,6 @@ const Hero = () => {
     "Full Stack Developer",
   ];
 
-  const [currentRole, setCurrentRole] = useState(roles[0]);
   const [isVisible, setIsVisible] = useState(false); // State to track visibility
   const heroRef = useRef(null); // Ref to the Hero section
 
@@ -39,18 +38,6 @@ const Hero = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prevRole) => {
-        const currentIndex = roles.indexOf(prevRole);
-        const nextIndex = (currentIndex + 1) % roles.length;
-        return roles[nextIndex];
-      });
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, [roles]);
-
   return (
     <div id="home" className="hero" ref={heroRef}>
       <img
@@ -59,7 +46,19 @@ const Hero = () => {
         className={`profile-img ${isVisible ? "fade-in" : ""}`}
       />
       <h1 className={isVisible ? "fade-in" : ""}>
-        <span>Hi, I'm Nadeesh Malaka,</span> <br /> {currentRole}
+        <span className="gradient-text">Hi, I'm Nadeesh Malaka,</span> <br />
+        <span className="role-container">
+          {roles.map((role, index) => (
+            <span
+              key={index}
+              className="role-text"
+              style={{ "--i": roles.length - index }}
+              data-text={role}
+            >
+              {role}
+            </span>
+          ))}
+        </span>
       </h1>
       <p className={isVisible ? "fade-in" : ""}>
         I specialize in building robust backend systems, crafting seamless user
