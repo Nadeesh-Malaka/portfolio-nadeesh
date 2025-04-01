@@ -207,9 +207,7 @@
   }
 
   /* Ensure animation still works for the content on mobile */
-  .about-right {
-    /* Let the default animation properties apply */
-  }
+
 
   .about-tabs {
     flex-direction: column;
@@ -253,4 +251,29 @@
   .about-skill hr {
     width: 60%;
   }
+
+ @media(max-width: 480px) {
+    .about-title h1 {
+      font-size: 40px;
+    }
+
+    .about-title img {
+      width: 120px;
+      height: 40px;
+    }
+
+    .about-para {
+      font-size: 16px;
+    }
+
+    .about-para h2 {
+      font-size: 20px;
+    }
+
+    .about-skill p {
+      font-size: 16px;
+    }
+  }
+
+
 }

@@ -239,3 +239,31 @@
   /* Ensure animation still works on mobile */
  
 }
+
+@media (max-width: 480px) {
+  .contact {
+    margin: 50px 20px;
+  }
+
+  .contact-title h1 {
+    font-size: 40px;
+  }
+
+  .contact-title img {
+    width: 100px;
+    margin-right: -20px;
+  }
+
+  .contact-left h1 {
+    font-size: 30px;
+  }
+
+  .contact-left p {
+    font-size: 16px;
+  }
+
+  .contact-submit {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}

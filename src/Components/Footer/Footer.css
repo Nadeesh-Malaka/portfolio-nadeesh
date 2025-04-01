@@ -90,3 +90,28 @@
         margin-bottom: 50px;
     }
 }
+
+@media(max-width: 480px){
+    .footer{
+        margin: 50px 20px;
+    }
+
+    .footer-top{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-bottom{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    
+.footer-bottom-right{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10PX;
+}
+
+}

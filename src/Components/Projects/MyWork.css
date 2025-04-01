@@ -182,3 +182,48 @@
     margin: 50px auto;
   }
 }
+
+@media (max-width: 480px) {
+  .mywork {
+    margin: 20px 20px;
+    gap: 30px;
+  }
+
+  .mywork-title h1 {
+    font-size: 40px;
+  }
+
+  .mywork-title img {
+    width: 100px;
+    margin-right: -10px;
+  }
+
+  .mywork-container {
+    grid-template-columns: repeat(2, 1fr); /* 1 column on mobile */
+    gap: 10px; /* Smaller gap for mobile */
+    width: 100%;
+    height: auto;
+  }
+
+  .mywork-item {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .mywork-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .mywork-overlay p {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .mywork-showmore {
+    padding: 15px;
+    font-size: 16px;
+    margin: auto;
+
+  }
+
+}
