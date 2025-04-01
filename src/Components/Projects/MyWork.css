@@ -158,6 +158,8 @@
   .mywork-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
     gap: 15px; /* Smaller gap for mobile */
+    width: 140%;
+    height: 100%;
   }
 
   .mywork-item {
@@ -171,7 +173,7 @@
   }
 
   .mywork-overlay p {
-    font-size: 14px; /* Smaller font size for mobile */
+    font-size: 6px; /* Smaller font size for mobile */
   }
 
   .mywork-showmore {
