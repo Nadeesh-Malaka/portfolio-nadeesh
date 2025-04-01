@@ -5,7 +5,7 @@
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a Full Stack Developer. Built with modern web technologies, this portfolio features a clean, responsive design with smooth animations and an intuitive user interface.
 
-🌐 **Live Demo**: 
+🌐 **Live Demo**: https://nadeesh-malaka.github.io/portfolio-nadeesh/
 
 ---
 
